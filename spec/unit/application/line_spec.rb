@@ -6,7 +6,7 @@ describe Line do
 
   context "draw a line" do
 
-    it "passes the line parameters 10,10,100,100 ,red to Canvas" do
+    it "Canvas calls the paint function" do
       frame = double("frame")
       allow(frame).to receive(:setDefaultCloseOperation)
       allow(frame).to receive(:add)

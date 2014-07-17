@@ -1,15 +1,16 @@
 require_relative './application/canvas'
 require_relative './application/line'
 require_relative './application/rectangle'
+require_relative '../lib/application/shape_button'
 require 'java'
 
 class Application
 
   def run
     canvas = Canvas.new
-    rectangle = Rectangle.new(10,10,100,100,Color.red)
-    canvas.add(rectangle)
-    line = Line.new(1,23,124,156,Color.green)
-    canvas.add(line)
+    shape_button1 = ShapeButton.new(Rectangle.new(10,10,100,100,Color.red))
+    shape_button2 = ShapeButton.new(Rectangle.new(100,100,200,200,Color.green))
+    canvas.add(shape_button1)
+    canvas.add(shape_button2)
   end
 end

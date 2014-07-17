@@ -12,4 +12,11 @@ describe Rectangle do
     expect(graphics).to receive(:drawLine).with(10,110,10,10)
     rectangle.render(graphics)
   end
+  it 'checks whether clicked or not' do
+    rectangle = Rectangle.new(10,10,100,100,Color.red)
+    javaEvent = double("javaEvent")
+    allow(javaEvent).to receive(:getX).and_return(50)
+    allow(javaEvent).to receive(:getY).and_return(50)
+    expect(rectangle.clicked?(javaEvent)).to eq(true)
+  end
 end

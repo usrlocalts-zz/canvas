@@ -16,7 +16,7 @@ describe Canvas do
     canvas=Canvas.new
     canvas.add(building_block)
   end
-  it 'should render the building block' do
+  it 'should draw the line' do
     graphics = double("graphics")
     building_block=Line.new(10,10,100,100,Color.red)
     expect(graphics).to receive(:setColor)
