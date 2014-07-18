@@ -7,7 +7,7 @@ class ShapeButton
   def render(graphics)
     @rectangle.render(graphics)
   end
-  def clicked? javaEvent
-    @rectangle.clicked?(javaEvent)
+  def clicked javaEvent
+    Kernel.puts "#{@rectangle}: Button Clicked" if @rectangle.clicked?(javaEvent)
   end
 end

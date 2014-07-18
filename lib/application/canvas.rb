@@ -63,7 +63,7 @@ class Canvas < javax.swing.JPanel
 
   def mouseClicked(javaEvent)
     @building_blocks.each do |building_block|
-      puts 'im clicked' if building_block.clicked?(javaEvent)
+     building_block.clicked(javaEvent)
     end
   end
 end

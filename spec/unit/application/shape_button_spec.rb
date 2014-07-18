@@ -6,8 +6,9 @@ describe 'ShapeButton' do
     rectangle = Rectangle.new(10,10,100,100,Color.red)
     shape_button = ShapeButton.new(rectangle)
     javaEvent = double("javaEvent")
-    allow(javaEvent).to receive(:getX).and_return(50)
+    allow(javaEvent).to receive(:getX){}.and_return(50)
     allow(javaEvent).to receive(:getY).and_return(50)
-    expect(shape_button.clicked?(javaEvent)).to eq(true)
+    expect(Kernel).to receive(:puts).and_return("#{@rectangle}: Button Clicked")
+    shape_button.clicked(javaEvent)
   end
 end

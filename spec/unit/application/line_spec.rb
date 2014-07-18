@@ -13,6 +13,7 @@ describe Line do
       allow(frame).to receive(:validate)
       allow(frame).to receive(:setSize)
       allow(frame).to receive(:setVisible)
+      allow(frame).to receive(:addMouseListener)
       allow(javax.swing.JFrame).to receive(:new).and_return(frame)
       expect(frame).to receive(:repaint)
       Canvas.new.add(Line.new(10,10,100,100,Color.red))

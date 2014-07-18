@@ -10,6 +10,7 @@ describe Canvas do
     allow(frame).to receive(:validate)
     allow(frame).to receive(:setSize)
     allow(frame).to receive(:setVisible)
+    allow(frame).to receive(:addMouseListener)
     allow(javax.swing.JFrame).to receive(:new).and_return(frame)
     building_block=Line.new(10,10,100,100,Color.red)
     expect(frame).to receive(:repaint)
@@ -17,7 +18,7 @@ describe Canvas do
     canvas.add(building_block)
   end
   it 'should draw the line' do
-    graphics = double("graphics")
+    graphics = double("graphics"){}
     building_block=Line.new(10,10,100,100,Color.red)
     expect(graphics).to receive(:setColor)
     expect(graphics).to receive(:drawLine)
