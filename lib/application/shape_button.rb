@@ -1,8 +1,8 @@
 #renders a button
 class ShapeButton
-  def initialize rectangle
+  def initialize x1,y1,width,height,color
     @label = "Button"
-    @rectangle = rectangle
+    @rectangle = Rectangle.new(x1,y1,width,height,color)
   end
   def render(graphics)
     @rectangle.render(graphics)

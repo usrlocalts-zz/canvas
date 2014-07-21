@@ -24,18 +24,20 @@ class Canvas < javax.swing.JPanel
     draw(graphics)
   end
 
+  def add(building_block)
+    @building_blocks<<building_block
+    repaint
+  end
+
   def draw(graphics)
     @building_blocks.each do |building_block|
       building_block.render(graphics)
     end
   end
 
-  def add(building_block)
-    @building_blocks<<building_block
+  def repaint
     @frame.repaint
-
   end
-
 
   def keyPressed(javaEvent)
     ;
@@ -63,7 +65,8 @@ class Canvas < javax.swing.JPanel
 
   def mouseClicked(javaEvent)
     @building_blocks.each do |building_block|
-     building_block.clicked(javaEvent)
+      building_block.clicked(javaEvent)
     end
   end
 end
+
